@@ -1,11 +1,12 @@
 # QUESTION ANSWERING SYSTEM USING BERT
 
---> This is an implementation of question answering system using BERT (bidirectional encoding from transformers).
+## Requirements
+- Python
+- [Transformers](https://huggingface.co/)
+- Flask
+- [Wikipedia](https://pypi.org/project/wikipedia/)
 
-# WORKFLOW
-
---> Given query is parsed using wikipedia library and the most relevant result is used. wikipedia library returns the entire text of a web page.
-
---> The text is processed as per requirements of BERT and then is fed to the model.
-
---> The model then returns a span ( beginning and ending index ) and it used to locate answer in the text.
+# WorkFlow
+- User enters a question in the text box. `wikipedia` module searches the query in wikipedia and returns the `n` most relevant documents.
+- Each candidate document is fed to the `BERT` model. Bert returns span containing the answer along with its probability of being the answer.
+- The highest rated span is then selected and displayed on the web page.
